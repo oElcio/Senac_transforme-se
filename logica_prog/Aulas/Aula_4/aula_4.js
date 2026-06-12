@@ -1,14 +1,30 @@
 //Desafio: Crie um programa que pergunta duas notas ao usuário, calcula e mostra a média ao usuario.
 
-let nomeUsuario = prompt("Digite seu nome:");
-console.log("Olá, " + nomeUsuario + "! Seja bem-vindo(a).");
+const readline = require("readline");
 
-let nome = prompt("Digite seu nome:");
-let atividadeFavorita = prompt("Qual é a sua atividade favorita?");
-console.log("O usuário " + nome + " gosta de " + atividadeFavorita + ".");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-let nota1 = Number(prompt("Digite a primeira nota:"));
-let nota2 = Number(prompt("Digite a segunda nota:"));
+rl.question("Fale seu nome: ", function(nomeUsuario) {
+  console.log("Olá, aluno " + nomeUsuario + " tudo bem?!.");
 
-let media = (nota1 + nota2) / 2;
-console.log("A média do aluno é: " + media);
+    rl.question("Digite a primeira nota: ", function(nota1) {
+      rl.question("Digite a segunda nota: ", function(nota2) {
+        let Nota1 = Number(nota1);
+        let Nota2 = Number(nota2);
+
+        let Media = (Nota1 + Nota2) / 2;
+
+        console.log("A média do aluno é: " + Media);
+
+        if (Media >= 7) {
+          console.log("O aluno está aprovado!");
+        } else {
+            console.log("reprovado")
+        }
+        rl.close();
+      });
+  });
+});
