@@ -21,3 +21,6 @@ rl.question("Digite 1 para sortear ou 2 para sair: ", function(resposta) {
 
   rl.close();
 });
+
+
+//asçldmaslKDnaKSdasl,po
