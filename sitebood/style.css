@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Recife Conecta - CSS personalizado
+   Complementa o Bootstrap 5, sem sobrescrevê-lo desnecessariamente.
+   ========================================================================== */
+
+:root {
+  --cor-azul: #12496a;
+  --cor-azul-escuro: #0c3450;
+  --cor-dourado: #c99a2e;
+  --cor-dourado-escuro: #9c771f;
+  --cor-fundo-claro: #f4f6f8;
+  --cor-cinza-escuro: #2b2f33;
+  --transicao-padrao: 0.2s ease-in-out;
+}
+
+body {
+  color: var(--cor-cinza-escuro);
+}
+
+/* Link para pular para o conteúdo (acessibilidade por teclado) */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0.5rem;
+  z-index: 2000;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--cor-azul);
+}
+
+/* Seções de fundo secundário */
+.bg-light-section {
+  background-color: var(--cor-fundo-claro);
+}
+
+/* Cores de apoio à identidade visual */
+.text-primary-dark {
+  color: var(--cor-azul-escuro);
+}
+
+.text-accent {
+  color: var(--cor-dourado);
+}
+
+.bg-primary-dark {
+  background-color: var(--cor-azul-escuro);
+}
+
+.bg-accent-dark {
+  background-color: var(--cor-dourado-escuro);
+}
+
+.btn-primary {
+  background-color: var(--cor-azul);
+  border-color: var(--cor-azul);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--cor-azul-escuro);
+  border-color: var(--cor-azul-escuro);
+}
+
+.btn-outline-primary {
+  color: var(--cor-azul);
+  border-color: var(--cor-azul);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--cor-azul);
+  border-color: var(--cor-azul);
+}
+
+.btn-accent {
+  background-color: var(--cor-dourado);
+  border-color: var(--cor-dourado);
+  color: #2b2003;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--cor-dourado-escuro);
+  border-color: var(--cor-dourado-escuro);
+  color: #2b2003;
+}
+
+/* Imagens dos cards e do carousel: padronizadas, sem distorção */
+.card-img-custom {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-img {
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Efeito suave ao passar o mouse nos cards */
+.card {
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.12);
+}
+
+/* Rodapé */
+footer.text-light-footer {
+  background-color: var(--cor-cinza-escuro);
+  color: #f1f1f1;
+}
+
+.footer-link {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  text-decoration: underline;
+}
+
+/* Estilos de foco visíveis, sem remover o contorno padrão sem substituto */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid var(--cor-dourado);
+  outline-offset: 2px;
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .carousel-item,
+  .carousel-item.active {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
